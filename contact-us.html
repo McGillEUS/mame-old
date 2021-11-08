@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MAME</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/mainKev.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</head>
+
+<body>
+
+    <div id="nav-container"></div>
+    <script>
+        $(function(){
+            $("#nav-container").load("nav.html");
+        });
+    </script>
+
+    <section class="bannerAll bannerText">
+        <h1>CONTACT US</h1>
+    </section>
+    <div class="row">
+    <section class="contactUs col-sm-6">
+        <section class="left">
+            <section class="contactTitle">
+                <h1 style="display: inline-block; text-align:center;">COME &nbsp</h1>
+                <h2 style="display: inline-block; text-align:center;">by<br>the</h2>
+                <h1 style="display: inline-block; text-align:center;">&nbsp OFFICE</h1>
+            </section>
+            <img src="img/Come by the Office.jpg" />
+            <div>
+                <h2><b>Address:</b></h2>
+                <p> 3480 rue University
+                <br> Montreal, QC H3A 0E9, Canada
+                <br> MC120
+                </p>
+                <h2><b>Office Hours:</b></h2>
+                <p>10am - 4pm (Monday - Friday)</p>
+            </div>  
+        </section>
+    </section>
+
+    </section>
+    <section class="contactUs col-sm-6">
+        <section class="right">
+        <section class="contactTitle">
+            <h1>EMAIL US</h1>
+        </section>
+        <div id="contact-area">
+        <!--
+                Something is not working here...
+        -->
+            <form method="post" action="contactengine.php">
+                <label for="Name">Name:</label>
+                <input type="text" name="Name" id="Name" />
+                
+                <label for="Email">Email:</label>
+                <input type="text" name="Email" id="Email" />
+    
+                <label for="Tel">Tel:</label>
+                <input type="text" name="Tel" id="Tel" />
+                
+                <label for="Message">Message:</label><br />
+                <textarea name="Message" rows="20" cols="20" id="Message"></textarea>
+
+                <input type="submit" name="submit" value="Submit" class="submit-button" />
+            </form>
+        </div>
+        </section>
+    </section>
+    </div>
+
+    <div id="footer-container">
+        <script>
+            $(function(){
+                $("#footer-container").load("footer.html");
+            });
+        </script>
+    </div>
+
+</body>
+<script type="text/javascript"></script>
+
+</html>

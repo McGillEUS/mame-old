@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MAME</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/mainKev.css">
+
+</head>
+
+<body>
+
+    <div id="nav-container">
+    <script>
+        $(function(){
+            $("#nav-container").load("nav.html");
+        });
+    </script>
+    </div>
+
+
+    <div class="carousel carousel-slider center fullscreen" data-indicators="true">
+        <div class="carousel-item red white-text" href="#one!"><img src="img/council/2018/group.jpg"></div>
+        <div class="carousel-item red white-text" href="#two!"><img src="img/council/2018/group_fun.jpg"></div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('.carousel').carousel();
+        });
+        autoplay();
+        function autoplay() {
+            $('.carousel').carousel('next');
+            setTimeout(autoplay, 8000);
+        }
+    </script>
+
+    <!-- The footer spacing on top if being hindered by the bootstrap class-->
+
+    <div id="footer-container">
+    <script>
+        $(function(){
+            $("#footer-container").load("footer.html");
+        });
+    </script>
+    </div>
+
+</body>
+</html>

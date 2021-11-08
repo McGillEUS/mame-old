@@ -1,0 +1,1160 @@
+/*---colour---*/
+:root {
+    --MAME-red: rgb(239, 61, 53);
+    --MAME-grey: rgb(86, 86, 86);
+}
+/*---flexbox---*/
+.flex-container {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+}
+
+.flex-contained {
+    flex: 1;
+    display: inline-flex;
+}
+
+.pre-flexbox-blurb p {
+    text-align: justify;
+    text-align-last: center;
+    font-size: 18px;
+    line-height: 150%;
+    font-variant: small-caps;
+    font-weight: 600;
+    color: var(--MAME-grey);
+    padding: 30px;
+    flex-grow: 1;
+}
+/*--- nav ---*/
+
+nav .nav-wrapper {
+    background-color: var(--MAME-grey);
+}
+.side-nav {
+    background-color: var(--MAME-grey);
+}
+.side-nav .collapsible-body {
+    background-color: var(--MAME-grey);
+}
+
+nav .brand-logo img{
+    height: 50px;
+    /*margin-left: 10px;*/
+}
+
+.nav-center ul {
+    text-align: center;
+    background-color: var(--MAME-grey);
+}
+.nav-center ul li {
+    display: inline;
+    float: none;
+    background-color: var(--MAME-grey);
+}
+.nav-center ul li a {
+    display: inline-block;
+    color: white;
+    background-color: var(--MAME-grey);
+}
+
+/*makes the text of a dropdown not have a weird highlight*/
+.nav-center .dropdown-content li:hover{
+    background-color: var(--MAME-grey);
+}
+
+.nav-left {
+    float: none;
+    text-align: center;
+    margin-left: 200px;
+}
+
+.side-nav > li a {
+    color: white;
+}
+.side-nav .collapsible-header{
+    padding-left: 32px;
+}
+.side-nav li>a>i, .side-nav li>a>[class^="mdi-"], .side-nav li>a li>a>[class*="mdi-"], .side-nav li>a>i.material-icons {
+    float: right;
+}
+.side-nav .collapsible-body a {
+    margin-left: 40px;
+}
+
+/*----------------------------------- Reset ---------------------------------*/
+/*If you're reading this, please don't cringe at this awful code - there's a reason why im in mech not in comp eng*/
+
+
+body,
+html,
+div {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+/*----------------------------------- Fonts --------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li,
+a {
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-size: 70px;
+}
+
+
+/*---------------------------------- Banner ----------------------------------*/
+
+.bannerAll {
+    width: 100%;
+    min-height: 100px;
+    background: linear-gradient(to right, rgba(86, 86, 86, 0.8) 0%, rgba(239, 61, 53, 0.8) 50%, rgba(86, 86, 86, 0.8) 100%), url(../img/MAME13.jpg);
+    background-size: cover;
+    margin-top: 0px;
+}
+
+.bannerText h1 {
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 0px;
+}
+
+
+/*----------------------------------- AboutUs --------------------------------*/
+
+#banner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+#aboutUsIntro-flex-container {
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+#aboutUsIntro-flex-container > * {
+    padding: 10px;
+    flex: 1;
+    display: inline-flex;
+}
+
+.aboutUsIntroIMG {
+    max-height: 400px;
+    max-width: 100%;
+    margin: auto;
+    width: auto;
+    height: auto;
+    padding-top: 30px;
+}
+
+#aboutUsIntroIMG {
+    max-width: 400px;
+}
+
+#team {
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+#team .profile {
+    margin: auto;
+    max-width: 33.33%;
+}
+#team .profile img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+@media all and (max-width: 1400px) {
+    #team .profile {
+        margin: auto;
+        max-width: 50%;
+    }
+}
+@media all and (max-width: 800px) {
+    #team .profile {
+        margin: auto;
+        max-width: 100%;
+    }
+}
+
+#team section {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+#team section div {
+    position: absolute;
+    background-color: var(--MAME-grey);
+    color: white;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    z-index: 99;
+}
+
+#team section img {
+    display: block;
+    margin: 0 auto;
+    height: 500px;
+    width: 100%;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    z-index: -1000;
+}
+
+#team section:hover div, #team section:active div {
+    opacity: 1;
+    height: 100%;
+    width: 100%;
+}
+
+#team section:hover img, #team section:active img {
+    opacity: 0.025;
+}
+
+#team h4 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+#team b {
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+/*for when there is not enough room for text and the picture side-by-side*/
+@media all and (max-width: 800px) {
+    #aboutUsIntro-flex-container{
+        flex-direction:column;
+        align-items: center;
+    }
+}
+
+#banner h3 {
+    text-align: justify;
+    text-align-last: center;
+    font-size: 18px;
+    line-height: 150%;
+    font-variant: small-caps;
+    font-weight: 600;
+    color: var(--MAME-grey);
+}
+
+#banner h1 {
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 15px;
+}
+
+/**/
+
+.rowPadding {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*designGrid needs to be a positioned element for the later elements to get its width*/
+.designGrid {
+    position: relative;
+    overflow: hidden;
+    padding-top: 20px;
+    width: 100%;
+    min-width: 400px;
+    max-width: 33.33%;
+    height: 400px;
+}
+
+.designGrid section {
+    width: 100%;
+}
+
+.designGrid div {
+    position: absolute;
+    background-color: var(--MAME-grey);
+    color: white;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    height: 100%;
+    width: 100%;
+}
+
+.designGrid img {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    max-height: 100%;
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+}
+
+.designGrid div:hover {
+    opacity: 1;
+    height: 500px;
+    width: 100%;
+}
+/*
+.designGrid img:hover img {
+    opacity: 0.025;
+}
+*/
+.designGrid h3 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 36px;
+    padding-left: 15px;
+    font-weight: bold;
+}
+
+.designGrid p {
+    font-size: 18px;
+    text-align: justify;
+    text-align-last: center;
+    padding: 0px 20px 20px 20px;
+}
+/*
+.designGrid b {
+    font-size: 13px;
+    text-decoration: underline;
+}*/
+
+/*----------------------------Design Teams-----------------------------------*/
+
+#designTeams section {
+    width: 33%;
+    height: auto;
+    display: inline-block;
+    padding-top: 20px;
+}
+
+#designTeams div {
+    width: 33%;
+    height: auto;
+    display: inline-block;
+    padding-top: 20px;
+    vertical-align: top;
+}
+
+#designTeams img {
+    width: 400px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+#designTeams h3 {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#designTeams p {
+    text-align: justify;
+    text-align-last: center;
+    padding: 10px 20px 20px 20px;
+}
+
+.designTeamsIMG {
+    padding-top: 20px;
+    width: 400px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.designTeamsLinks a {
+    color: var(--MAME-red);
+    transition: all 0.5s ease;
+}
+
+.designTeamsLinks a:hover {
+    color: blue;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+}
+
+/*------------------------------Contact Us-------------------------------------*/
+
+.contactUs {
+    padding-top: 20px;
+    width: 49.5%;
+    height: 100vh;
+    background-color: white;
+    display: inline-block;
+    overflow: hidden;
+}
+
+#quick {
+    width: 0.1%;
+    height: 400px;
+    margin-bottom: 200px;
+    display: inline-block;
+    background-color: black;
+}
+
+.contactUs h1 {
+    font-size: 42px;
+    text-align: center;
+}
+
+.contactUs h2 {
+    font-size: 18px;
+    text-align: center;
+}
+
+.contactUs p {
+    text-align: justify;
+    text-align-last: center;
+}
+
+.contactTitle {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.contactUs div {
+    padding-top: 0px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.contact-area form {
+    padding-top: 30px;
+}
+
+.washout {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    background-color: #000;
+}
+
+.left img {
+    padding-top: 30px;
+    display: block;
+    width: 78%;
+    height: 300px;
+    margin: 0 auto;
+}
+
+
+/* This below may be unecessary */
+
+
+/*
+.emailBox {
+    margin-left: 7.5%;
+    display: inline-block;
+    width: 85%;
+    height: auto;
+}
+*/
+
+#contact-area input,
+#contact-area textarea {
+    padding: 5px;
+    width: 450px;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 0px 0px 5px 0px;
+    border: 2px solid #ccc;
+}
+
+#contact-area textarea {
+    height: 125px;
+}
+
+#contact-area textarea:focus,
+#contact-area input:focus {
+    border: 2px solid #900;
+}
+
+#contact-area input.submit-button {
+    width: 125px;
+}
+
+label {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    float: left;
+    text-align: left;
+    width: 100px;
+    padding-top: 2px;
+    font-size: 1.2em;
+}
+
+
+/*--------------------------------Home Page---------------------------------------*/
+
+/*#homePage {
+    background-repeat: no-repeat;
+    background-size: cover;
+    -moz-background: cover;
+    -o-background: cover;
+    width: cover;
+    height: 100vh;
+}*/
+
+/* Bottom Part of Home Page Stuff Here: */
+
+.carousel {
+    height: 40vw;
+    -webkit-perspective: 67.44vw;
+            perspective: 67.44vw;
+
+}
+
+.newsletter img {
+    max-height: 300px;
+}
+
+.newsletter h4 {
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+}
+
+.mamePressBanner h2 {
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 10px;
+    padding-top: 10px;
+}
+
+/*=========================
+  Icons
+ ================= */
+
+/* footer social icons */
+ul.social-network {
+    list-style: none;
+    display: inline;
+    margin-left:0 !important;
+    padding: 0;
+}
+ul.social-network li {
+    display: inline;
+    margin: 0 5px;
+}
+
+
+/* footer social icons - MISSING SNAPCHAT AND INSTAGRAM*/
+.social-network a.icoInstagram:hover {
+    background-color: #125688;
+}
+.social-network a.icoFacebook:hover {
+    background-color:#3B5998;
+}
+
+.social-network a.icoSnapchat:hover {
+    background-color:#fffc00;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.social-network a.icoLinkedin:hover {
+    background-color:#007bb7;
+}
+.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+    color:#fff;
+}
+
+.social-circle li a {
+    display:inline-block;
+    position:relative;
+    margin:0 auto 0 auto;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    border-radius:50%;
+    text-align:center;
+    width: 30px;
+    height: 30px;
+    font-size:10px;
+}
+.social-circle li i {
+    margin:0;
+    line-height:30px;
+    text-align: center;
+}
+
+.social-circle i {
+    color: #fff;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    transition: all 0.8s;
+}
+
+.social-circle li a {
+    background-color: var(--MAME-grey);
+}
+
+/*---------------------------------Events----------------------------------------*/
+
+#calendar {
+    width: 100%;
+    height: auto;
+    padding: 50px;
+}
+
+#events div {
+    width: 33%;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom-style: solid;
+    border-width: 3px;
+    border-bottom-color: var(--MAME-grey);
+}
+
+#events ul {
+    padding: 0;
+    padding-top: 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    width: 33%;
+    height: 300px;
+    display: inline-block;
+    list-style-type: none;
+    text-align: center;
+    line-height: 200%;
+}
+
+.eventDescriptionsTitle {
+    height: auto;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom-style: solid;
+    border-width: 3px;
+    border-bottom-color: var(--MAME-grey);
+}
+
+.eventDescriptions {
+    padding: 0;
+    padding-top: 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    height: auto;
+    list-style-type: none;
+    text-align: center;
+    line-height: 200%;
+}
+/*---------------------------------Mentorship---------------------------------------*/
+
+#mentorship h4 {
+    text-align: justify;
+    text-align-last: center;
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color: var(--MAME-grey);
+    line-height: 125%;
+    font-weight: 500;
+}
+
+/*---------------------------------FAQ---------------------------------------*/
+
+#FAQ {
+    padding-top: 25px;
+    height: auto;
+}
+
+button.accordion {
+    background-color: transparent;
+    color: var(--MAME-grey);
+    cursor: pointer;
+    padding: 0px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    transition: 0.4s;
+    font-variant: small-caps;
+}
+
+button.accordion.active,
+button.accordion:hover {
+    color: var(--MAME-red);
+    background-color: transparent;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+    margin: 0 auto;
+    text-align: justify;
+    text-align-last: center;
+    width: 50%;
+}
+
+.answer.show {
+    opacity: 1;
+    max-height: 500px;
+}
+
+.answer p {
+    font-size: 18px;
+    color: #999999;
+}
+
+
+/*-------------------------------Get Involved-------------------------------------*/
+
+#getInvolved div {
+    display: inline-block;
+    width: 39%;
+    height: 325px;
+    background-color: var(--MAME-grey);
+    vertical-align: top;
+    padding: 25px;
+}
+
+#getInvolved img {
+    width: 39%;
+    height: 325px;
+    opacity: 0.5;
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+}
+
+#blurb:hover p {
+    opacity: 1;
+    z-index: 3;
+}
+
+#getInvolved h1 {
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: var(--MAME-grey);
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+#getInvolved h2 {
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+#getInvolved p {
+    text-align: justify;
+    text-align-last: center;
+    opacity: 0;
+    color: white;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+
+/*---------------------------------Footer---------------------------------------*/
+
+.footerAll {
+    /*height: 60px;*/
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    text-align: center;
+    color: var(--MAME-grey);
+}
+
+a {
+    color: inherit;
+    transition: all 0.5s ease;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--MAME-red);
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.footerLinks a {
+    -webkit-margin-before: 1.5em;
+    -webkit-margin-after: 1.5em;
+    margin-top: 20px;
+}
+
+
+/*Not sure why the / is remaining the same even with bold */
+
+.footerLinks span {
+    font-weight: bold;
+    font-weight: 600;
+}
+
+
+/*---------------------------------Header---------------------------------------*/
+
+#header {
+    position: fixed;
+    z-index: 10;
+    font-size: 0px;
+}
+
+#header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--MAME-grey);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+}
+
+#header li {
+    display: inline-block;
+    border-right: 1px solid #bbb;
+    line-height: 3px;
+    margin: 15px 0;
+}
+
+#header li:last-child {
+    border-right: none;
+}
+
+#header li a {
+    font-size: 14px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-variant: small-caps;
+    letter-spacing: 2px;
+}
+
+#header li a:hover {
+    background-color: var(--MAME-red);
+    /*Seems neat? lol*/
+    padding-right: 14px;
+    padding-left: 14px;
+    text-decoration: underline;
+}
+
+.active {
+    background-color: var(--MAME-red);
+}
+/*------------------------------- Resources -------------------------------------*/
+
+.academic h3 {
+    text-align: center;
+    font-weight: bold;
+    background: var(--MAME-grey);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.coursepacks img{
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    display: block;
+}
+
+.finances h3 {
+    text-align: center;
+    font-weight: bold;
+    background: var(--MAME-grey);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#finances .row {
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+#finances .col-sm-6 {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.eusmall h3 {
+    text-align: center;
+    font-weight: bold;
+    background: var(--MAME-red);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.externalrelations h3 {
+    text-align: center;
+    font-weight: bold;
+    background: var(--MAME-red);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.resLinks h3 {
+    text-align: center;
+    font-weight: bold;
+    background: var(--MAME-grey);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.mental-health-and-equity h3 {
+    text-align: center;
+    font-weight: bold;
+    background: var(--MAME-red);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.resources section {
+    height: auto;
+    display: inline-block;
+}
+
+.resources div {
+    height: auto;
+    display: inline-block;
+    padding-top: 20px;
+    vertical-align: top;
+}
+
+.resources h4 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.resources p {
+    text-align: justify;
+    text-align-last: center;
+    padding: 5px 20px 5px 20px;
+}
+
+#resourcesFinance div {
+    height: auto;
+    padding-top: 20px;
+    vertical-align: top;
+}
+
+#resourcesFinance p {
+    text-align: justify;
+    text-align-last: center;
+    padding: 5px 20px 5px 20px;
+}
+
+#resourcesFinance b {
+    font-weight: bold;
+}
+
+#resourcesFinance ul {
+    list-style-type: disc;
+    padding: 5px 20px 5px 20px;
+}
+
+.resourcesLinks a {
+    color: var(--MAME-red);
+    transition: all 0.5s ease;
+}
+
+.resourcesLinks a:hover {
+    color: blue;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.financeIMG{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 600px;
+    height: 335px;
+    display: block;
+    margin: 0 auto;
+}
+
+.resourcesIMG {
+    padding: 20px;
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid var(--MAME-grey);
+}
+
+.mallIMG {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 294px;
+    height: 130px;
+    display: block;
+    margin: 0 auto;
+}
+
+.linksIMG1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height:102px;
+    width:180px;
+    display: block;
+    margin: 0 auto;
+}
+
+.linksIMG2 {
+    padding-top: 50px;
+    height: 225px;
+    width: 225px;
+    display: block;
+    margin: 0 auto;
+}
+
+/*-----------------------Councillors-----------------------------*/
+#team h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    text-align: left;
+    padding-left: 15px;
+    font-weight: bold;
+}
+
+#team p {
+    font-size: 12px;
+    text-align: justify;
+    text-align-last: center;
+    padding: 0px 20px 20px 20px;
+}
+
+ul.social-network2 {
+    list-style: none;
+    display: inline;
+    margin-left:0 !important;
+    padding: 0;
+}
+ul.social-network2 li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.social-network2 a.icoInstagram:hover {
+    background-color: #125688;
+}
+.social-network2 a.icoFacebook:hover {
+    background-color:#3B5998;
+}
+
+.social-network2 a.icoSnapchat:hover {
+    background-color:#fffc00;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.social-network2 a.icoLinkedin:hover {
+    background-color:#007bb7;
+}
+.social-network2 a.icoRss:hover i, .social-network2 a.icoFacebook:hover i, .social-network2 a.icoTwitter:hover i,
+.social-network2 a.icoGoogle:hover i, .social-network2 a.icoVimeo:hover i, .social-network2 a.icoLinkedin:hover i {
+    color:#fff;
+}
+
+.social-circle2 li a {
+    display:inline-block;
+    position:relative;
+    margin:0 auto 0 auto;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    border-radius:50%;
+    text-align:center;
+    width: 30px;
+    height: 30px;
+    font-size:15px;
+}
+.social-circle2 li i {
+    margin:0;
+    line-height:30px;
+    text-align: center;
+}
+
+.social-circle2 i {
+    color: #fff;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    transition: all 0.8s;
+}
+
+.social-circle2 li a {
+    background-color: var(--MAME-grey);
+}
+
+/*-------------------------------Home Page-------------------------------------*/
+
+/*-------------------------------Get Involved Sponsors-------------------------------------*/
+.sponsors div{
+    flex: 1 0 350px;
+    height: auto;
+    display: inline-block;
+    padding-top: 20px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.sponsors h4 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.sponsors p {
+    text-align: justify;
+    text-align-last: center;
+    padding: 5px 20px 5px 20px;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.sponsorsLinks a {
+    color: var(--MAME-red);
+    transition: all 0.5s ease;
+}
+
+.sponsorsLinks a:hover {
+    color: blue;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+}
+
+@media all and (max-width: 1430px) {
+    .sponsors div {
+        margin: auto;
+        min-width: 50%;
+    }
+}
+
+.sponsorIMG {
+    /*center errthang*/
+}
